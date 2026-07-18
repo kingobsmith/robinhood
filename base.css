@@ -1,0 +1,235 @@
+/* ================================================================
+   Robbin' Hood Entertainment — base.css
+   Tokens · reset · typography · layout primitives · reveal · rule
+   Palette mirrors thewisemen.co (onyx + gold + crimson accent)
+   ================================================================ */
+
+:root {
+  /* Onyx base */
+  --onyx:       #0A0908;
+  --onyx-2:     #12100E;
+  --onyx-3:     #1B1815;
+
+  /* Gold */
+  --gold:       #D4AF37;
+  --gold-bright:#F5D76E;
+  --gold-dk:    #B8932E;
+
+  /* Crimson (music / covenant accent) */
+  --crimson:      #7A1B1B;
+  --crimson-lit:  #B21414;
+  --crimson-bright:#D33636;
+
+  /* Neutrals */
+  --ivory:      #EFE7D2;
+  --ivory-dim:  #C9BFA5;
+  --muted:      #8B8266;
+  --line:       rgba(212,175,55,0.18);
+  --line-strong:rgba(212,175,55,0.35);
+
+  /* Fonts */
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans:  'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Layout */
+  --wrap-max: 1200px;
+  --nav-h:    72px;
+}
+
+/* ---------- reset ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 8px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--onyx);
+  color: var(--ivory);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+img, svg { display: block; max-width: 100%; }
+svg { color: var(--gold); }             /* default color pen for inline SVGs */
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+a:hover { color: var(--gold-bright); }
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+ul { list-style: none; }
+
+/* ---------- typography ---------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--serif);
+  color: var(--ivory);
+  font-weight: 500;
+  letter-spacing: .01em;
+  line-height: 1.15;
+}
+
+h1 { font-size: clamp(2.6rem, 1.4rem + 4vw, 5.2rem); }
+h2 { font-size: clamp(2rem,  1.2rem + 2.5vw, 3.4rem); font-weight: 500; }
+h3 { font-size: clamp(1.4rem, 1.1rem + 0.8vw, 1.85rem); font-weight: 600; }
+h4 { font-size: clamp(1.15rem, 1rem + 0.5vw, 1.4rem);  font-weight: 600; }
+
+p  { color: var(--ivory-dim); }
+
+strong { color: var(--ivory); font-weight: 600; }
+
+.gold    { color: var(--gold); font-style: italic; }
+.accent  { color: var(--gold-bright); font-style: italic; }
+.fire    { color: var(--crimson-lit); font-style: italic; }
+
+.eyebrow {
+  display: inline-block;
+  color: var(--gold);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.section-title { margin-bottom: 20px; }
+
+.lead {
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.25rem);
+  line-height: 1.65;
+  color: var(--ivory-dim);
+  max-width: 780px;
+}
+
+blockquote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.6rem, 1.1rem + 1.8vw, 2.6rem);
+  color: var(--ivory);
+  line-height: 1.3;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+/* ---------- layout primitives ---------- */
+.wrap {
+  width: 100%;
+  max-width: var(--wrap-max);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 40px);
+}
+
+.band {
+  padding: clamp(64px, 8vw, 120px) 0;
+  position: relative;
+}
+
+.band-head {
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+
+.center { text-align: center; }
+.center .lead { margin-inline: auto; }
+
+/* horizontal separator between bands */
+.rule {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line), transparent);
+  margin: 0;
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 3px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn svg { width: 16px; height: 16px; }
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--onyx);
+  border-color: var(--gold);
+}
+.btn-gold:hover {
+  background: var(--gold-bright);
+  color: var(--onyx);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold);
+}
+.btn-ghost:hover {
+  background: var(--gold);
+  color: var(--onyx);
+}
+
+/* ---------- reveal animation ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+.reveal.is-in,
+.reveal.visible,
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Fallback: if motion.js never fires, still show content after 1.2s */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* Safety net — if the JS observer is missing, show content on load */
+.no-js .reveal { opacity: 1; transform: none; }
+
+/* ---------- selection ---------- */
+::selection {
+  background: var(--gold);
+  color: var(--onyx);
+}
+
+/* ---------- focus visible ---------- */
+:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+  border-radius: 2px;
+}

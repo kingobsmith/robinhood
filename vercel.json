@@ -1,0 +1,24 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/moors/index.html",
+      "has": [{ "type": "host", "value": "moors.thewisemen.co" }]
+    },
+    {
+      "source": "/:path((?!api/).*)",
+      "destination": "/moors/:path",
+      "has": [{ "type": "host", "value": "moors.thewisemen.co" }]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/therapy",
+      "destination": "https://soulcare.pplx.app/",
+      "permanent": false,
+      "has": [{ "type": "host", "value": "moors.thewisemen.co" }]
+    }
+  ]
+}
