@@ -11,6 +11,77 @@
 .moors-hero h1 { margin-bottom: 18px; }
 .moors-hero .hero-sub { max-width: 680px; font-size: 1.1rem; }
 
+.foreword-band {
+  background: radial-gradient(900px 500px at 50% 0%, rgba(212,175,55,0.06), transparent 70%);
+}
+.foreword-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.foreword-head {
+  text-align: center;
+  margin-bottom: 36px;
+}
+.foreword-head .section-title {
+  margin-bottom: 8px;
+}
+.foreword-date {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--gold);
+  font-size: 1.1rem;
+}
+.foreword-opener {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 1.4rem + 1vw, 2.4rem);
+  color: var(--gold-bright);
+  font-style: italic;
+  margin-bottom: 28px;
+  text-align: center;
+}
+.foreword-body p {
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem);
+  line-height: 1.75;
+  color: var(--ivory-dim);
+  margin-bottom: 22px;
+}
+.foreword-body p:last-child {
+  margin-bottom: 0;
+}
+.foreword-close {
+  color: var(--ivory) !important;
+  font-style: italic;
+  margin-top: 8px;
+}
+.foreword-note {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  text-align: center;
+}
+.bundle-faq {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.bundle-faq strong {
+  color: var(--ivory-dim);
+  display: block;
+  margin-bottom: 6px;
+}
+.bundle-faq a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .book-showcase {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
